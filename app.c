@@ -106,17 +106,12 @@ void appExibirDealhes   (void){
     printf("             void *valor; struct nodo *prox; }\n");
     printf("  lista_t : struct { nodo_t *inicio; nodo_t *fim; }\n");
     
-    printf("\n- Observacao de desempenho:\n");
-    printf("  O ponteiro 'fim' garante insercao O(1) ao final da lista\n");
-    
     printf("\n- Organizacao modular:\n");
     printf("  lista       : lista.h / lista.c\n");
     printf("  repository  : repository.h / repository.c\n");
     printf("  service     : service.h / service.c\n");
     printf("  controller  : controller.h / controller.c\n");
-    printf("  aplicacao   : app.h / app.c / listaapp.h / listaapp.c\n");
-    printf("Adotado um espalhamento de service pelo controller e listaapp\n");
-    printf("podendo entender que poderia ter juntado no service tudo");
+    printf("  aplicacao   : app.h / app.c\n");
     
     printf("\n- Fluxo de execucao:\n");
     printf("  O entrypoint (main) invoca um menu de opcoes, que aciona\n");
@@ -136,15 +131,28 @@ void appExibirDealhes   (void){
     printf("  Copia de buffers realizada via memcpy para armazenamento\n");
     printf("  nos nodos da lista\n");
     
-    
     printf("\n- Uso de macros e enumeracoes:\n");
     printf("  Macros (#define) utilizadas para mascaras simbolicas\n");
     printf("  Preferencia por macros neste contexto\n");
     printf("  Uso adicional de enum no repository com finalidade similar\n");
     
-    printf("\n- Separacao de responsabilidades:\n");
-    printf("  lista.h define a estrutura base da lista\n");
-    printf("  listaapp.h encapsula comportamentos especificos da aplicacao\n");
+    
+    printf("\n- Observacoes de codigo pertinentes:\n");
+    printf("  .O ponteiro 'fim' garante insercao O(1) ao final da lista\n");
+    printf("  .Nem todas as mensagens ficaram no controller, algumas ficaram\n");
+    printf("  no service por conveniencia e complexidade de transportar\n");
+    printf("  .A lista e limpada ao sair do sistema, nao em main\n");
+    printf("  .Insercao de caractere de fim na string do buffer\n");
+    printf("  .Uso de memcpy para o buffer ir pro nodo\n");
+    printf("  .Uso de comentarios de bloco por ser ansi e nao suportar 2/\n");
+    printf("  .Mantive ideia de repositorio mesmo que nao abstrai a lista ali\n");
+    printf("  .Incrementos na solucao para melhor aplicacao visual
+    printf("  .Incremento do ponteiro fim na lista");
+    printf("  .
+    
+    
+    
+    
 }
 
 void appExibirMenu(void) {

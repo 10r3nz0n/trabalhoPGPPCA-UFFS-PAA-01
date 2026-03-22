@@ -3,6 +3,6 @@
 
 #include "lista.h"
 
-void controllerExecutarOpcao(int opcao, lista_t *lista);
+void controllerExecutarOpcao (int opcao, lista_t *lista);
 
 #endif

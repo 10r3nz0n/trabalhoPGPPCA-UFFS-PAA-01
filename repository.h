@@ -16,6 +16,7 @@ typedef enum retornoLeitura{
 
 /*Aqui nenhuma estrutura global, para nao ser ma pratica, lista fica em main*/
 
-retornoLeitura_t repositoryCarregarArquivo (const char *nomeArquivo, lista_t *lista);
+retornoLeitura_t repositoryCarregarArquivo (const char *nomeArquivo, 
+                                            lista_t    *lista);
 
 #endif
