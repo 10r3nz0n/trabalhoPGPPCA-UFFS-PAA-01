@@ -5,7 +5,7 @@
 
 int main(void) {
     int opcao;
-    lista_t lista; /*A declaraçao estrutura de dados ficou aqui*/
+    lista_t lista; 
 
     listaInicializar(&lista);
 
@@ -28,6 +28,5 @@ int main(void) {
     } while (opcao != 0);
     
     appCorPadrao();
-    /*lista e limpada no service*/
     return 0;
 }

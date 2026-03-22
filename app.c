@@ -1,5 +1,6 @@
 #include "app.h"
 #include "lista.h"
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,7 +25,6 @@ void appLimparTela(void) {
 
 void appPausar(void) {
     printf("\nPressione ENTER para continuar...");
-    /*appLimparBuffer();*/
     getchar();
 }
 
@@ -145,42 +145,6 @@ void appExibirDealhes   (void){
     printf("\n- Separacao de responsabilidades:\n");
     printf("  lista.h define a estrutura base da lista\n");
     printf("  listaapp.h encapsula comportamentos especificos da aplicacao\n");
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 void appExibirMenu(void) {
@@ -206,6 +170,10 @@ int appLerOpcao(void) {
     return opcao;
 }
 
+char appNormalizarTipo(char tipo) {
+    return (char) toupper((unsigned char) tipo);
+}
+
 char appLerTipo(void) {
     char tipo;
 
@@ -219,9 +187,7 @@ char appLerTipo(void) {
 
     appLimparBuffer();
 
-    if (tipo >= 'a' && tipo <= 'z') {
-        tipo = (char) (tipo - 'a' + 'A');
-    }
+    tipo = appNormalizarTipo (tipo);
 
     return tipo;
 }
@@ -233,16 +199,3 @@ void appCorVerdeMatrix(void) {
 void appCorPadrao(void) {
     printf("\033[0m");
 }
-
-
-
-/*
-
-O repository realmente ficou responsável pela leitura física do arquivo binário 
-e pela montagem dos dados lidos em memória. A lista encadeada ficou encapsulada 
-como estrutura de dados própria. O controller recebe a opção do menu e dispara 
-a ação correspondente.
-
-
-
-*/

@@ -8,8 +8,6 @@
 #define TRUE 1
 #define FALSE 0
 
-/*defs----------------------------------------------------------------*/
-
 typedef struct nodo {
     char tipo;
     unsigned int tamanho;
@@ -21,8 +19,6 @@ typedef struct lista {
     nodo_t *inicio;
     nodo_t *fim;
 } lista_t;
-
-/*-------------------Comportamento---------------------------------*/
 
 void        listaInicializar        (lista_t *lista);
 int         listaEstaVazia          (const lista_t *lista);

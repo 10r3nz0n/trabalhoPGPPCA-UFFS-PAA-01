@@ -40,7 +40,8 @@ retornoLeitura_t repositoryCarregarArquivo(const char *nomeArquivo, lista_t *lis
 
     /*printf("\nArquivo %s carregado com sucesso.\n", nomeArquivo);
     printf("Quantidade de registros carregados: %u\n", quantidadeRegistros);
-    Resolvi tirar as mensagens aqui por entender que estariam em camada inadequada*/
+    Resolvi tirar as mensagens aqui por entender que estariam em camada inadequada
+    Foram para o controller e algum caso no service*/
 
     return RETORNA_SUCESSO;
 }

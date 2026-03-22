@@ -12,5 +12,6 @@ char appLerTipo         (void);
 void appCorVerdeMatrix  (void);
 void appCorPadrao       (void);
 void appExibirDealhes   (void);
+char appNormalizarTipo  (char tipo);
 
 #endif
