@@ -140,7 +140,7 @@ void listaMostrarNodo(const nodo_t *nodo) {
             break;
 
         case TIPO_FLOAT:
-            printf("%.2f", *(float *) nodo->valor);
+            printf("%f", *(float *) nodo->valor); /*sem .2*/
             break;
 
         case TIPO_STRING:

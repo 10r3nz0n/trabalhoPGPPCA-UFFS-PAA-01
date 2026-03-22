@@ -80,7 +80,8 @@ void appExibirDealhes   (void){
     printf("\nEsta implementacao pode ser descrita conforme segue:\n");
 
     printf("\n- Ambiente de desenvolvimento:\n");
-    printf("  onlinegdb.com (share: )\n");
+    printf("  onlinegdb.com (share: onlinegdb.com/s35EaTe22");
+    printf("  pode ter versao atualizada depois)\n");
     printf("\n- git hub");
     printf("  https://github.com/10r3nz0n/trabalhoPGPPCA-UFFS-PAA-01.git");
     
@@ -148,10 +149,6 @@ void appExibirDealhes   (void){
     printf("  .Mantive ideia de repositorio mesmo que nao abstrai a lista ali\n");
     printf("  .Incrementos na solucao para melhor aplicacao visual
     printf("  .Incremento do ponteiro fim na lista");
-    printf("  .
-    
-    
-    
     
 }
 
@@ -162,7 +159,7 @@ void appExibirMenu(void) {
     printf("3 - Mostrar todos os registros\n");
     printf("-\n");
     printf("8 - Enunciado do problema\n");
-    printf("9 - Detalhes de implementacao\n");
+    printf("9 - Enunciado e detalhes de implementacao\n");
     printf("0 - Sair\n");
     printf("Escolha uma opcao: ");
 }
