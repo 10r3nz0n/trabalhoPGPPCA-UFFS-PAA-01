@@ -80,7 +80,7 @@ void appExibirDealhes   (void){
     printf("\nEsta implementacao pode ser descrita conforme segue:\n");
 
     printf("\n- Ambiente de desenvolvimento:\n");
-    printf("  onlinegdb.com (share: onlinegdb.com/s35EaTe22");
+    printf("  onlinegdb.com (share: onlinegdb.com/OvErLT9D_");
     printf("  pode ter versao atualizada depois)\n");
     printf("\n- git hub");
     printf("  https://github.com/10r3nz0n/trabalhoPGPPCA-UFFS-PAA-01.git");
