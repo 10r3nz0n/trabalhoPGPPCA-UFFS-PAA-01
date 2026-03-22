@@ -1,8 +1,6 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#include "app.h"
-
 #define TIPO_CHAR   'C'
 #define TIPO_INT    'I'
 #define TIPO_FLOAT  'F'

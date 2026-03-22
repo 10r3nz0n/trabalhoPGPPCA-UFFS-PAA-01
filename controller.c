@@ -10,53 +10,66 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
         case 1: {
             retornoLeitura_t retornoCarga;
             char resposta;
-        
+
             if (serviceListaPossuiDados(lista)) {
                 printf("\nLista contem valores. Deseja sobrepor? (S/N): ");
-        
+
                 if (scanf(" %c", &resposta) != 1) {
                     appLimparBuffer();
                     printf("\nEntrada invalida.\n");
                     break;
                 }
-        
+
                 appLimparBuffer();
-        
+
                 if (resposta != 'S' && resposta != 's') {
                     printf("\nCarga cancelada pelo usuario.\n");
                     break;
                 }
             }
-        
+
             retornoCarga = serviceCarregarDados(lista, NOME_ARQUIVO);
-        
+
             if (retornoCarga == RETORNA_SUCESSO) {
                 printf("\nCarga de dados realizada com sucesso.\n");
-                break;
-            }
-        
-            if (retornoCarga == RETORNA_FALHA) {
+            } else {
                 printf("\nNao foi possivel concluir a carga de dados.\n");
-                break;
             }
-        
-            printf("\nRetorno inesperado na carga de dados.\n");
+
             break;
         }
 
         case 2: {
+            int consultou;
+
             if (serviceListaEstaVazia(lista)) {
                 printf("\nLista vazia.\n");
                 break;
             }
-        
+
             tipo = appLerTipo();
-            serviceConsultarPorTipo(lista, tipo);
+
+            if (!listaTipoEhValido(tipo)) {
+                printf("\nTipo invalido.\n");
+                break;
+            }
+
+            consultou = serviceConsultarPorTipo(lista, tipo);
+
+            if (!consultou) {
+                printf("\nNenhum registro encontrado para este tipo.\n");
+            }
+
             break;
         }
 
         case 3: {
-            serviceMostrarTodos(lista);
+            int mostrou = serviceMostrarTodos(lista);
+
+            if (!mostrou) {
+                printf("\nNenhum registro encontrado.\n");
+            }
+
             break;
         }
 
@@ -64,7 +77,7 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
             appExibirSobre();
             break;
         }
-        
+
         case 9: {
             appExibirDealhes();
             break;

@@ -30,9 +30,9 @@ void appPausar(void) {
 
 void appExibirCabecalho(void) {
     printf("2026.1 PGPPCA-UFFS");
-    printf("\nMestrado Profissional em Computacao Aplicada.");
-    printf("\nMCET042 - Projeto e Analise de Algoritmos.");
-    printf("\nProfessores: Dr. Denio Duarte e Dr. Samuel da Silva Feitosa.");
+    printf("\nMestrado Profissional em Computacao Aplicada");
+    printf("\nMCET042 - Projeto e Analise de Algoritmos");
+    printf("\nProfessores: Dr. Denio Duarte e Dr. Samuel da Silva Feitosa");
     printf("\nDiscente: Valdemar Lorenzon Junior\n");
 }
 
@@ -81,6 +81,8 @@ void appExibirDealhes   (void){
 
     printf("\n- Ambiente de desenvolvimento:\n");
     printf("  onlinegdb.com (share: )\n");
+    printf("\n- git hub");
+    printf("  https://github.com/10r3nz0n/trabalhoPGPPCA-UFFS-PAA-01.git");
     
     printf("\n- Ambiente de compilacao local:\n");
     printf("  Windows 11 / w64devkit - ANSI C89\n");
@@ -108,25 +110,32 @@ void appExibirDealhes   (void){
     printf("  O ponteiro 'fim' garante insercao O(1) ao final da lista\n");
     
     printf("\n- Organizacao modular:\n");
-    printf("  lista       -> lista.h / lista.c\n");
-    printf("  repository  -> repository.h / repository.c\n");
-    printf("  service     -> service.h / service.c\n");
-    printf("  controller  -> controller.h / controller.c\n");
-    printf("  aplicacao   -> app.h / app.c / listaapp.h / listaapp.c\n");
+    printf("  lista       : lista.h / lista.c\n");
+    printf("  repository  : repository.h / repository.c\n");
+    printf("  service     : service.h / service.c\n");
+    printf("  controller  : controller.h / controller.c\n");
+    printf("  aplicacao   : app.h / app.c / listaapp.h / listaapp.c\n");
+    printf("Adotado um espalhamento de service pelo controller e listaapp\n");
+    printf("podendo entender que poderia ter juntado no service tudo");
     
     printf("\n- Fluxo de execucao:\n");
     printf("  O entrypoint (main) invoca um menu de opcoes, que aciona\n");
     printf("  o controller. Este delega ao service, que coordena as\n");
     printf("  operacoes sobre repository e lista, com apoio da camada\n");
     printf("  de aplicacao\n");
+    printf("  Opcoes extras de menu foram adicionadas para apoio mesmo\n");
+    printf("  que nao pertencam a solicitacao de solucao");
     
     printf("\n- Gerenciamento de memoria:\n");
     printf("  Tratamento de liberacao de memoria na recarga e na\n");
     printf("  finalizacao do programa\n");
     
     printf("\n- Manipulacao de dados:\n");
+    printf("  Observado caso de não ter teminador de string no arquivo\n");
+    printf("  e inserido focadamente no buffer\n");
     printf("  Copia de buffers realizada via memcpy para armazenamento\n");
     printf("  nos nodos da lista\n");
+    
     
     printf("\n- Uso de macros e enumeracoes:\n");
     printf("  Macros (#define) utilizadas para mascaras simbolicas\n");
@@ -224,3 +233,16 @@ void appCorVerdeMatrix(void) {
 void appCorPadrao(void) {
     printf("\033[0m");
 }
+
+
+
+/*
+
+O repository realmente ficou responsável pela leitura física do arquivo binário 
+e pela montagem dos dados lidos em memória. A lista encadeada ficou encapsulada 
+como estrutura de dados própria. O controller recebe a opção do menu e dispara 
+a ação correspondente.
+
+
+
+*/

@@ -30,7 +30,7 @@ retornoLeitura_t repositoryCarregarArquivo(const char *nomeArquivo, lista_t *lis
         if (resultado == RETORNA_FALHA) {
             /*printf("\nErro ao ler o arquivo binario.\n");*/
             fclose(arquivo);
-            return RETORNA_FALHA; /*Early return, nao coloquei na condicao*/
+            return RETORNA_FALHA;
         }
         
     } while (resultado == RETORNA_SUCESSO);
@@ -39,7 +39,8 @@ retornoLeitura_t repositoryCarregarArquivo(const char *nomeArquivo, lista_t *lis
     fclose(arquivo);
 
     /*printf("\nArquivo %s carregado com sucesso.\n", nomeArquivo);
-    printf("Quantidade de registros carregados: %u\n", quantidadeRegistros);*/
+    printf("Quantidade de registros carregados: %u\n", quantidadeRegistros);
+    Resolvi tirar as mensagens aqui por entender que estariam em camada inadequada*/
 
     return RETORNA_SUCESSO;
 }
