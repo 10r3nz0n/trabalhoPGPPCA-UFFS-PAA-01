@@ -1,0 +1,9 @@
+
+gcc -std=c89 -Wall -Wextra -pedantic -g main.c app.c controller.c service.c repository.c lista.c listaapp.c -o programa.exe
+
+não aceitou //
+
+gcc -Wall -Wextra -pedantic -g main.c app.c controller.c service.c repository.c lista.c listaapp.c -o programa.exe
+
+
+.\programa.exe > saida.txt 2>&1
