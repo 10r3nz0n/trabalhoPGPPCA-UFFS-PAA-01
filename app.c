@@ -147,7 +147,7 @@ void appExibirDealhes   (void){
     printf("  .Uso de memcpy para o buffer ir pro nodo\n");
     printf("  .Uso de comentarios de bloco por ser ansi e nao suportar 2/\n");
     printf("  .Mantive ideia de repositorio mesmo que nao abstrai a lista ali\n");
-    printf("  .Incrementos na solucao para melhor aplicacao visual
+    printf("  .Incrementos na solucao para melhor aplicacao visual\n");
     printf("  .Incremento do ponteiro fim na lista");
     
 }
