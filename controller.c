@@ -111,7 +111,10 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
         }
         
         case 7: {
-        
+            /*TODO: renomear o arquivo parcial pro original,
+                    renomear antes o original pra um old,
+                    talvez pedir o arquivo a ser usado no sistema
+                     ao inicio e nao ter como hoje por macro...*/
             break;
         }
 

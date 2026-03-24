@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "app.h"
 #include "controller.h"
-#include "listaabstrata.h"
 
 int main(void) {
     int opcao;
@@ -12,6 +11,7 @@ int main(void) {
     appCorPadrao();
     appLimparTela();
     appExibirCabecalho();
+    appExibirQualEstruturaLista();
 
     do {
         

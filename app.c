@@ -35,6 +35,14 @@ void appExibirCabecalho(void) {
     printf("\nDiscente: Valdemar Lorenzon Junior\n");
 }
 
+void appExibirQualEstruturaLista(void) {
+    printf("\nNo momento esta solucao esta configurada para a lista:\n");
+    (USAR_LISTA_DUPLA == 0) ? printf(" - Encadeamento simples\n")
+                            : printf(" - Encadeamento duplo\n");
+    printf("Alterar em 'listaabstrata.h: USAR_LISTA_DUPLA : 0-não e 1-sim\n");
+}
+
+
 void appExibirSobre(void) {
     appLimparTela();
     appExibirCabecalho();
@@ -137,6 +145,8 @@ void appExibirDealhes(void) {
     printf("                    struct nodoDupla *proximo; }\n");
     printf("    listaDupla_t : struct { nodoDupla_t *inicio;\n");
     printf("                    nodoDupla_t *fim; }\n");
+    
+    appPausar();
 
     printf("\n- Organizacao modular:\n");
     printf("  lista simples : lista.h / lista.c\n");
@@ -186,16 +196,37 @@ void appExibirDealhes(void) {
     printf("   estrutura de lista dentro dele\n");
     printf("  .Foram feitos incrementos na solucao para melhor\n");
     printf("   organizacao, reaproveitamento e apresentacao\n");
+    
+    printf("\n- Uso de agentes de IA:\n");
+    printf("  .IA foi utilizda como nesta função para harmonizar escrita\n");
+    printf("  .Utilizada para gerar codigo operacional que não depende de\n");
+    printf("   logica, ex: esqueletos de switch-case\n");
+    printf("  .Analise de solucao de codigo para certificacao de coerencia\n");
+    printf("   logica do que se propunha a funcao\n");
+    printf("  .Pesquisas diversas sobre caracteristicas de funcoes, sintaxe e\n");
+    printf("   requisitos do trabalho: padrao C ANSI, confronto de minha\n");
+    printf("   implementao pessoal de listas x apresentacao pelo material da\n");
+    printf("   disciplina, analise de alguma necessidade de refatoracao\n");
+    
+    
+    printf("\n- Observacoes finais:\n");
+    printf("  .Buscado evitar redundancia de codigo\n");
+    printf("  .Trazer responsabilidade dentro de um contexto unico aceitavel para a funcao\n");
+    printf("  .A construcao em camadas foi para explorar um estudo atual pessoal do aluno\n");
+    printf("  .A implementacao abstrata foi o mais perto de caso polimorfico de lista no paradigma\n");
+    printf("   buscou-se uma pre implementacao de listas para trabalho futuro\n");
+    printf("  .Tempo desempenhado: sex(2)+sab(7)+dom(3)+seg(2)+ter(4) = 18 .. 20 horas\n");
+    
 }
 
 void appExibirMenu(void) {
     printf("\nMenu de opcoes\n");
-    printf("1 - Carregar arquivo\n");
+    printf("1 - Carregar arquivo padrao - myfile.dat\n");
     printf("2 - Consultar por tipo\n");
     printf("3 - Mostrar todos os registros\n");
     printf("-\n");
     printf("6 - Gerar arquivo parcial pra teste de registros iniciais\n");
-    printf("7 - Retomar arquivo original completo\n");
+    printf("7 - Definir arquivo de carga\n");
     printf("8 - Enunciado do problema\n");
     printf("9 - Enunciado e detalhes de implementacao\n");
     printf("0 - Sair\n");
