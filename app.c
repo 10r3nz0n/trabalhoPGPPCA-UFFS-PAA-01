@@ -39,9 +39,8 @@ void appExibirQualEstruturaLista(void) {
     printf("\nNo momento esta solucao esta configurada para a lista:\n");
     (USAR_LISTA_DUPLA == 0) ? printf(" - Encadeamento simples\n")
                             : printf(" - Encadeamento duplo\n");
-    printf("Alterar em 'listaabstrata.h: USAR_LISTA_DUPLA : 0-não e 1-sim\n");
+    printf("Alterar em 'listaabstrata.h: USAR_LISTA_DUPLA : 0-nao e 1-sim\n");
 }
-
 
 void appExibirSobre(void) {
     appLimparTela();
@@ -88,7 +87,7 @@ void appExibirDealhes(void) {
     printf("\nEsta implementacao pode ser descrita conforme segue:\n");
 
     printf("\n- Ambiente de desenvolvimento:\n");
-    printf("  onlinegdb.com : onlinegdb.com/Yiokxhr1g\n");
+    printf("  onlinegdb.com : onlinegdb.com/OVDuM_ldmT\n");
     printf("  flags de compilacao: -std=c89 -Wall -Wextra\n");
     printf("  Pode haver versao mais atualizada que a registrada aqui no momento\n");
 
@@ -181,6 +180,10 @@ void appExibirDealhes(void) {
     printf("  inclusive na selecao da implementacao da lista abstrata\n");
     printf("  Uso adicional de enum no repository para controle do\n");
     printf("  fluxo de leitura do arquivo\n");
+    
+    
+    appLimparBuffer();
+    appPausar();
 
     printf("\n- Observacoes de codigo pertinentes:\n");
     printf("  .O ponteiro fim garante insercao O(1) ao final da lista\n");
@@ -215,7 +218,7 @@ void appExibirDealhes(void) {
     printf("  .A construcao em camadas foi para explorar um estudo atual pessoal do aluno\n");
     printf("  .A implementacao abstrata foi o mais perto de caso polimorfico de lista no paradigma\n");
     printf("   buscou-se uma pre implementacao de listas para trabalho futuro\n");
-    printf("  .Tempo desempenhado: sex(2)+sab(7)+dom(3)+seg(2)+ter(4) = 18 .. 20 horas\n");
+    printf("  .Tempo desempenhado: inicio sex20-03-2026(2h)+sab(7h)+dom(3h)+seg(2h)+ter(4h) = 18 .. 20 horas\n");
     
 }
 

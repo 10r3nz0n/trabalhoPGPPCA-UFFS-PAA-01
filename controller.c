@@ -100,7 +100,7 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
                                                         nomeArquivoSaida,
                                                         quantidadeRegistros);
 
-            if (retornoGeracao != RETORNA_SUCESSO) { /*uso de !() - ansi*/
+            if (retornoGeracao != RETORNA_SUCESSO) { 
                 printf("\nNao foi possivel gerar o arquivo parcial.\n");
                 break;
             }
@@ -115,6 +115,7 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
                     renomear antes o original pra um old,
                     talvez pedir o arquivo a ser usado no sistema
                      ao inicio e nao ter como hoje por macro...*/
+            printf("Opcao em desenvolvimento.");
             break;
         }
 
