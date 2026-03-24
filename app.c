@@ -3,6 +3,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void appExibirMenu(void) {
+    appLimparTela();
+    appExibirCabecalho();
+    appExibirQualEstruturaLista();
+    printf("\nMenu de opcoes\n");
+    printf("1 - Carregar arquivo padrao - myfile.dat\n");
+    printf("2 - Consultar por tipo\n");
+    printf("3 - Mostrar todos os registros\n");
+    printf("-\n");
+    printf("6 - Gerar arquivo parcial pra teste de registros iniciais\n");
+    printf("7 - Definir arquivo de carga\n");
+    printf("8 - Enunciado do problema\n");
+    printf("9 - Enunciado e detalhes de implementacao\n");
+    printf("0 - Sair\n");
+    printf("Escolha uma opcao: ");
+}
+
 void appLimparBuffer(void) {
     int c;
 
@@ -222,19 +239,6 @@ void appExibirDealhes(void) {
     
 }
 
-void appExibirMenu(void) {
-    printf("\nMenu de opcoes\n");
-    printf("1 - Carregar arquivo padrao - myfile.dat\n");
-    printf("2 - Consultar por tipo\n");
-    printf("3 - Mostrar todos os registros\n");
-    printf("-\n");
-    printf("6 - Gerar arquivo parcial pra teste de registros iniciais\n");
-    printf("7 - Definir arquivo de carga\n");
-    printf("8 - Enunciado do problema\n");
-    printf("9 - Enunciado e detalhes de implementacao\n");
-    printf("0 - Sair\n");
-    printf("Escolha uma opcao: ");
-}
 
 int appLerOpcao(void) {
     int opcao;
@@ -245,28 +249,6 @@ int appLerOpcao(void) {
     }
     appLimparBuffer();
     return opcao;
-}
-
-char appNormalizarTipo(char tipo) {
-    return (char) toupper((unsigned char) tipo);
-}
-
-char appLerTipo(void) {
-    char tipo;
-
-    printf("\nInforme o tipo desejado [%c %c %c %c]: ",
-           TIPO_CHAR, TIPO_INT, TIPO_FLOAT, TIPO_STRING);
-
-    if (scanf(" %c", &tipo) != 1) {
-        appLimparBuffer();
-        return '\0';
-    }
-
-    appLimparBuffer();
-
-    tipo = appNormalizarTipo (tipo);
-
-    return tipo;
 }
 
 void appCorVerdeMatrix(void) {

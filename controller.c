@@ -3,6 +3,7 @@
 #include "app.h"
 #include <stdio.h>
 
+
 void controllerExecutarOpcao(int opcao, lista_t *lista) {
     char tipo;
 
@@ -111,11 +112,11 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
         }
         
         case 7: {
-            /*TODO: renomear o arquivo parcial pro original,
-                    renomear antes o original pra um old,
-                    talvez pedir o arquivo a ser usado no sistema
-                     ao inicio e nao ter como hoje por macro...*/
-            printf("Opcao em desenvolvimento.");
+            printf("Opcao aberta para desenvolvimento.\n\n");
+            printf(" TODO: renomear o arquivo parcial pro original,");
+            printf("       renomear antes o original pra um old,\n");
+            printf("       talvez pedir o arquivo a ser usado no sistema\n");
+            printf("       no inicio e nao ter como hoje por macro fixado...\n");
             break;
         }
 
@@ -140,4 +141,26 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
             printf("\nOpcao invalida.\n");
             break;
     }
+}
+
+char appLerTipo(void) {
+    char tipo;
+
+    printf("\nInforme o tipo desejado [%c %c %c %c]: ",
+           TIPO_CHAR, TIPO_INT, TIPO_FLOAT, TIPO_STRING);
+
+    if (scanf(" %c", &tipo) != 1) {
+        appLimparBuffer();
+        return '\0';
+    }
+
+    appLimparBuffer();
+
+    tipo = appNormalizarTipo (tipo);
+
+    return tipo;
+}
+
+char appNormalizarTipo(char tipo) {
+    return (char) toupper((unsigned char) tipo);
 }

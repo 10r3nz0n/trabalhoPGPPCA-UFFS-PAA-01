@@ -10,10 +10,6 @@ int main(void) {
     listaInicializar(&lista);
 
     appCorPadrao();
-    appLimparTela();
-    appExibirCabecalho();
-    appExibirQualEstruturaLista();
-
     do {
         
         appExibirMenu();
@@ -22,9 +18,6 @@ int main(void) {
         
         if (opcao != 0) {
             appPausar();
-            appLimparTela();
-            appExibirCabecalho();
-            appExibirQualEstruturaLista();
         }
 
     } while (opcao != 0);
