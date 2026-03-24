@@ -118,7 +118,7 @@ void appExibirDealhes(void) {
 
     printf("\n- Comandos de compilacao:\n");
     printf("  Compilando tudo:\n");
-    printf("    gcc -std=c89 -Wall -Wextra -pedantic -g main.c app.c\n");
+    printf("    gcc -std=c89 -Wall -Wextra -pedantic main.c app.c\n"); /*-g*/
     printf("    controller.c service.c repository.c lista.c listadupla.c\n");
     printf("    comumlistas.c -o programa.exe\n");
     printf("\n");
