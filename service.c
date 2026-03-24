@@ -27,8 +27,8 @@ int serviceListaEstaVazia(const lista_t *lista) {
     return listaEstaVazia(lista);
 }
 
-retornoLeitura_t serviceCarregarDados(lista_t *lista, const char *nomeArquivo) {
-    retornoLeitura_t carregou;
+statusRetornoArquivo_t serviceCarregarDados(lista_t *lista, const char *nomeArquivo) {
+    statusRetornoArquivo_t carregou;
     lista_t listaLocal;
 
     if (lista == NULL || nomeArquivo == NULL) {
@@ -55,20 +55,13 @@ int serviceConsultarPorTipo(const lista_t *lista, char tipo) {
         return FALSE;
     }
 
-    if (!listaTipoEhValido(tipo)) {
+    if (!comumListasListaTipoEhValido(tipo)) {
         return FALSE;
     }
 
     return serviceMostrarComFiltro(lista, TRUE, tipo);
 }
 
-int serviceMostrarTodos(const lista_t *lista) {
-    if (lista == NULL || listaEstaVazia(lista)) {
-        return FALSE;
-    }
-
-    return serviceMostrarComFiltro(lista, FALSE, '\0');
-}
 
 void serviceEncerrar(lista_t *lista) {
     if (lista == NULL) {
@@ -166,7 +159,33 @@ static int serviceMostrarComFiltro(const lista_t *lista, int usarFiltro, char ti
 
         aux = aux->prox;
     }
+    
+    if (count > 0) {
+        printf("\n\n%d registros exibidos.\n", count);
+    }
 
     appCorPadrao();
     return encontrou;
+}
+
+int serviceMostrarTodos(const lista_t *lista) {
+    if (lista == NULL || listaEstaVazia(lista)) {
+        return FALSE;
+    }
+
+    return serviceMostrarComFiltro(lista, FALSE, '\0');
+}
+
+statusRetornoArquivo_t serviceGerarArquivoParcial(const char *nomeOrigem,
+                                            const char *nomeDestino,
+                                            unsigned int quantidadeRegistros) {
+    if ((nomeOrigem == NULL) ||
+        (nomeDestino == NULL) ||
+        (quantidadeRegistros == 0)) {
+        return RETORNA_FALHA;
+    }
+
+    return repositoryGerarArquivoParcial(nomeOrigem,
+                                         nomeDestino,
+                                         quantidadeRegistros);
 }

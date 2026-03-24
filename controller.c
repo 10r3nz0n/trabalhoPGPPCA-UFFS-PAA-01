@@ -8,7 +8,7 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
 
     switch (opcao) {
         case 1: {
-            retornoLeitura_t retornoCarga;
+            statusRetornoArquivo_t retornoCarga;
             char resposta;
 
             if (serviceListaPossuiDados(lista)) {
@@ -49,7 +49,7 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
 
             tipo = appLerTipo();
 
-            if (!listaTipoEhValido(tipo)) {
+            if (!comumListasListaTipoEhValido(tipo)) {
                 printf("\nTipo invalido.\n");
                 break;
             }
@@ -70,6 +70,48 @@ void controllerExecutarOpcao(int opcao, lista_t *lista) {
                 printf("\nNenhum registro encontrado.\n");
             }
 
+            break;
+        }
+
+        case 6: {
+            char nomeArquivoSaida[256];
+            unsigned int quantidadeRegistros;
+            statusRetornoArquivo_t retornoGeracao;
+
+            printf("\nInforme o nome do novo arquivo: ");
+            if (scanf("%255s", nomeArquivoSaida) != 1) {
+                appLimparBuffer();
+                printf("\nEntrada invalida.\n");
+                break;
+            }
+            
+            appLimparBuffer();
+
+            printf("\nInforme a quantidade de registros para o corte: ");
+            if (scanf("%u", &quantidadeRegistros) != 1) {
+                appLimparBuffer();
+                printf("\nEntrada invalida.\n");
+                break;
+            }
+            
+            appLimparBuffer();
+
+            retornoGeracao = serviceGerarArquivoParcial(NOME_ARQUIVO,
+                                                        nomeArquivoSaida,
+                                                        quantidadeRegistros);
+
+            if (retornoGeracao != RETORNA_SUCESSO) { /*uso de !() - ansi*/
+                printf("\nNao foi possivel gerar o arquivo parcial.\n");
+                break;
+            }
+            
+            printf("\nArquivo parcial gerado com sucesso: %s.\n", nomeArquivoSaida);
+            
+            break;
+        }
+        
+        case 7: {
+        
             break;
         }
 

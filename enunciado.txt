@@ -1,0 +1,20 @@
+Nesta atividade, o estudante devera submeter a solução implementada em C Ansi 
+para o seguinte problema:
+Abrir o arquivo myfile.dat (Data File) para leitura binária
+Ler os registros e carregá-los para a memória usando alguma estrutura de dados
+Permitir fazer uma projeção dos registros consultando apenas registros de um 
+determinado tipo
+  
+Estrutura do arquivo de dados é a seguinte:
++-----+-------+-------+----+------+--------
+|Type |Length |Content|Type|Length|Content .........t
++-----+-------+-------+----+------+--------
+
+Onde Type é o tipo do conteúdo 
+(C - Character, I - Integer, F - Float e S - String), 
+Length é o tamnho em bytes do conteúdo do registro e Content é o dado.
+
+A solução deve ter um "menu" para o usuário escolher a carga e a consulta.
+No caso da consulta, o usuário escolhe o tipo de dado. 
+Por exemplo, caso escolher I, serão apresentados apenas os registros 
+que contenham esse tipo.

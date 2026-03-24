@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "app.h"
 #include "controller.h"
-#include "lista.h"
+#include "listaabstrata.h"
 
 int main(void) {
     int opcao;

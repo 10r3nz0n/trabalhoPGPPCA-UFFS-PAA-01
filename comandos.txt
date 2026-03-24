@@ -1,8 +1,18 @@
-cd ..
+//chegar na pasta
 
+cd ..
 c:\trabalho1
 
-gcc -std=c89 -Wall -Wextra -pedantic -g main.c app.c controller.c service.c repository.c lista.c -o programa.exe
+//compilar tudo, mas com escolha interna no #define pra lista simples ou dupla, não via menu de sistema, nao polimorfico
 
+gcc -std=c89 -Wall -Wextra main.c app.c controller.c service.c repository.c lista.c listadupla.c comumlistas.c -o programa.exe
+
+//compatibilizado .exe pra pra simples
+gcc -std=c89 -Wall -Wextra main.c app.c controller.c service.c repository.c lista.c comumlistas.c -o programa.exe
+
+//compatibilizando .exe pra dupla
+gcc -std=c89 -Wall -Wextra main.c app.c controller.c service.c repository.c listadupla.c comumlistas.c -o programa.exe
+
+//executar:
 
 .\programa.exe 

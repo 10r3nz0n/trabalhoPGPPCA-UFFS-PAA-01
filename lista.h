@@ -1,12 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#define TIPO_CHAR   'C'
-#define TIPO_INT    'I'
-#define TIPO_FLOAT  'F'
-#define TIPO_STRING 'S'
-#define TRUE 1
-#define FALSE 0
+#include "comumlistas.h"
 
 typedef struct nodo {
     
@@ -39,7 +34,6 @@ int         listaInserirNoFim       (lista_t        *lista,
                                      const void     *valor);
                                      
 void        listaLimpar             (lista_t        *lista);
-int         listaTipoEhValido       (char            tipo);
 void        listaMostrarNodo        (const nodo_t   *nodo);
 
 #endif

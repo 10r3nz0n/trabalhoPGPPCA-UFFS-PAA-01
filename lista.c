@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*No material, a insercao no fim usa um ponteiro auxiliar chamado aux para 
+  guardar o ultimo nodo da lista. Na minha implementacao, esse mesmo papel 
+  foi incorporado ao campo fim da estrutura _t. Assim, o first do material 
+  corresponde ao meu inicio, o 'aux' corresponde ao meu fim e o 's' corresponde 
+  ao meu novo nodo. 
+  
+  A logica de encadeamento continua a mesma: no primeiro 
+  elemento, inicio e fim apontam para o mesmo nodo; nos proximos, o fim atual 
+  aponta para o novo nodo e depois o fim passa a ser atualizado para esse 
+  novo nodo.*/
+
 void listaInicializar(lista_t *lista) {
     if (lista == NULL) {
         return;
@@ -43,7 +54,16 @@ nodo_t *listaAlocarNodo(void) {
 }
 
 int listaDefinirValorNodo(nodo_t *nodo, char tipo, unsigned int tamanho, const void *valor) {
-    if (nodo == NULL || valor == NULL) {
+    
+    if (nodo == NULL) {
+        return FALSE;
+    }
+    
+    if (tipo != TIPO_STRING && (valor == NULL || tamanho == 0)) {
+        return FALSE;
+    }
+
+    if (tipo == TIPO_STRING && valor == NULL && tamanho > 0) {
         return FALSE;
     }
 
@@ -57,7 +77,9 @@ int listaDefinirValorNodo(nodo_t *nodo, char tipo, unsigned int tamanho, const v
         }
 
         memcpy(nodo->valor, valor, tamanho);
-        ((char *) nodo->valor)[tamanho] = '\0';
+        if (((char *) nodo->valor)[tamanho - 1] != '\0') {
+           ((char *) nodo->valor)[tamanho] = '\0';    
+        }
         return TRUE;
     }
 
@@ -129,28 +151,6 @@ void listaMostrarNodo(const nodo_t *nodo) {
     }
 
     printf("Tipo:\t%c\tTamanho:\t%u\tValor:\t", nodo->tipo, nodo->tamanho);
-
-    switch (nodo->tipo) {
-        case TIPO_CHAR:
-            printf("%c", *(char *) nodo->valor);
-            break;
-
-        case TIPO_INT:
-            printf("%d", *(int *) nodo->valor);
-            break;
-
-        case TIPO_FLOAT:
-            printf("%f", *(float *) nodo->valor); /*sem .2*/
-            break;
-
-        case TIPO_STRING:
-            printf("%s", (char *) nodo->valor);
-            break;
-
-        default:
-            printf("Tipo desconhecido");
-            break;
-    }
-
+    comumListasMostrarValor(nodo->tipo, nodo->valor);
     printf("\n");
 }
