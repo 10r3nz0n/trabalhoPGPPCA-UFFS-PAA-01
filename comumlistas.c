@@ -1,7 +1,6 @@
 #include "comumlistas.h"
 #include <stdio.h>
 
-
 int comumListasListaTipoEhValido(char tipo) {
     return tipo == TIPO_CHAR ||
            tipo == TIPO_INT ||

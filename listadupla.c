@@ -61,9 +61,11 @@ int listaDuplaDefinirValorNodo(nodoDupla_t *nodo, char tipo, unsigned int tamanh
             return FALSE;
         }
 
+        /*copiando os dqados, evitando tratar aqui caso a caso*/
         memcpy(nodo->valor, valor, tamanho);
-        if (((char *) nodo->valor)[tamanho - 1] != '\0') {
-            ((char *) nodo->valor)[tamanho] = '\0';
+        
+        if (((char *) nodo->valor)[tamanho - 1] != TERMINADOR_STRING) {
+            ((char *) nodo->valor)[tamanho] = TERMINADOR_STRING;
         }
         return TRUE;
     }

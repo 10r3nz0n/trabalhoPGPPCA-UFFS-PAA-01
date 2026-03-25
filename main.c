@@ -8,8 +8,8 @@ int main(void) {
     lista_t lista; 
 
     listaInicializar(&lista);
-
     appCorPadrao();
+    
     do {
         
         appExibirMenu();

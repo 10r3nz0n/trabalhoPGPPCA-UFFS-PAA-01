@@ -150,15 +150,21 @@ void appExibirDealhes(void) {
     printf("  implementacao concreta pode ser trocada por define\n");
 
     printf("\n- Definicoes estruturais:\n");
+    printf("Organizado em bytes de maior pra menor size_t devido padding\n");
+
     printf("  Lista simples:\n");
-    printf("    nodo_t  : struct { char tipo; unsigned int tamanho;\n");
-    printf("               void *valor; struct nodo *prox; }\n");
+    printf("    nodo_t  : struct { void *valor; struct nodo  *prox;\n");
+    printf("                       unsigned int  tamanho; char tipo; }\n");
     printf("    lista_t : struct { nodo_t *inicio; nodo_t *fim; }\n");
     printf("\n");
     printf("  Lista dupla:\n");
-    printf("    nodoDupla_t  : struct { char tipo; unsigned int tamanho;\n");
-    printf("                    void *valor; struct nodoDupla *anterior;\n");
-    printf("                    struct nodoDupla *proximo; }\n");
+    printf("    nodoDupla_t  : struct { void *valor; struct nodo *prox;\n"); 
+    printf("                            struct nodoDupla  *anterior;\n");
+    printf("                            struct nodoDupla  *proximo;\n");
+    printf("                            unsigned int       tamanho;\n");
+    printf("                            char               tipo;\n");
+    printf("                            char tipo; unsigned int tamanho; }\n");
+    printf("\n");
     printf("    listaDupla_t : struct { nodoDupla_t *inicio;\n");
     printf("                    nodoDupla_t *fim; }\n");
     

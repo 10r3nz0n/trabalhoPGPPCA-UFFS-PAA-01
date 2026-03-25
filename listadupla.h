@@ -5,11 +5,12 @@
 
 typedef struct nodoDupla {
     
-    char               tipo;
-    unsigned int       tamanho;
     void              *valor;
+    struct nodo       *prox;
     struct nodoDupla  *anterior;
     struct nodoDupla  *proximo;
+    unsigned int       tamanho;
+    char               tipo;
     
 } nodoDupla_t;
 

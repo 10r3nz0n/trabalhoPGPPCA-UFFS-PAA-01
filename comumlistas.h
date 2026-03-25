@@ -5,6 +5,7 @@
 #define TIPO_INT    'I'
 #define TIPO_FLOAT  'F'
 #define TIPO_STRING 'S'
+#define TERMINADOR_STRING '\0'
 
 #define TRUE  1
 #define FALSE 0

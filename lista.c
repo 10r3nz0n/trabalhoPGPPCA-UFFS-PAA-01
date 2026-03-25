@@ -76,9 +76,12 @@ int listaDefinirValorNodo(nodo_t *nodo, char tipo, unsigned int tamanho, const v
             return FALSE;
         }
 
+        /*copiando os dados, evitando tratar aqui caso a caso void */
+        /*o buffer terá free depois*/
         memcpy(nodo->valor, valor, tamanho);
-        if (((char *) nodo->valor)[tamanho - 1] != '\0') {
-           ((char *) nodo->valor)[tamanho] = '\0';    
+        
+        if (((char *) nodo->valor)[tamanho - 1] != TERMINADOR_STRING) {
+           ((char *) nodo->valor)[tamanho] = TERMINADOR_STRING;    
         }
         return TRUE;
     }

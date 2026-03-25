@@ -114,7 +114,7 @@ static int repositoryLerConteudoEInserir(FILE *arquivo, lista_t *lista, const ch
 
     inseriu = listaInserirNoFim(lista, tipo, tamanho, buffer);
 
-    free(buffer);
+    free(buffer); /*memcpy copiou antes*/
     return inseriu;
 }
 

@@ -5,10 +5,10 @@
 
 typedef struct nodo {
     
-    char          tipo;
-    unsigned int  tamanho;
     void         *valor;
     struct nodo  *prox;
+    unsigned int  tamanho;
+    char          tipo;
     
 } nodo_t;
 
