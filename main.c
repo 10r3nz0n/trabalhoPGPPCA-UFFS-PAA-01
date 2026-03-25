@@ -4,7 +4,7 @@
 #include "listaabstrata.h"
 
 int main(void) {
-    int opcao;
+    int     opcao;
     lista_t lista; 
 
     listaInicializar(&lista);

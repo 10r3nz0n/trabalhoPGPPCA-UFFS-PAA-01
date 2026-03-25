@@ -45,11 +45,13 @@ void appPausar(void) {
 }
 
 void appExibirCabecalho(void) {
-    printf("2026.1 PGPPCA-UFFS");
+    printf("2026.1 PPGPCA-UFFS");
     printf("\nMestrado Profissional em Computacao Aplicada");
     printf("\nMCET042 - Projeto e Analise de Algoritmos");
     printf("\nProfessores: Dr. Denio Duarte e Dr. Samuel da Silva Feitosa");
     printf("\nDiscente: Valdemar Lorenzon Junior\n");
+    printf("\nEntrega em: 25/03/2026\n");
+    
 }
 
 void appExibirQualEstruturaLista(void) {
@@ -101,16 +103,11 @@ void appExibirDealhes(void) {
     appPausar();
     appLimparTela();
 
-    printf("\nEsta implementacao pode ser descrita conforme segue:\n");
+    printf("\nEsta implementacao pode ser descrita conforme segue\n");
 
     printf("\n- Ambiente de desenvolvimento:\n");
     printf("  onlinegdb.com : onlinegdb.com/OVDuM_ldmT\n");
     printf("  flags de compilacao: -std=c89 -Wall -Wextra\n");
-    printf("  Pode haver versao mais atualizada que a registrada aqui no momento\n");
-
-    printf("\n- Repositorio do projeto:\n");
-    printf("  GitHub\n");
-    printf("  https://github.com/10r3nz0n/trabalhoPGPPCA-UFFS-PAA-01.git\n");
 
     printf("\n- Ambiente de compilacao local:\n");
     printf("  Windows 11 / w64devkit\n");
@@ -118,7 +115,7 @@ void appExibirDealhes(void) {
 
     printf("\n- Comandos de compilacao:\n");
     printf("  Compilando tudo:\n");
-    printf("    gcc -std=c89 -Wall -Wextra -pedantic main.c app.c\n"); /*-g*/
+    printf("    gcc -std=c89 -Wall -Wextra -pedantic main.c app.c\n");
     printf("    controller.c service.c repository.c lista.c listadupla.c\n");
     printf("    comumlistas.c -o programa.exe\n");
     printf("\n");
@@ -127,20 +124,24 @@ void appExibirDealhes(void) {
     printf("  em listaabstrata.h\n");
     printf("\n");
     printf("  Se quiser evitar codigo sobrando no executavel:\n");
-    printf("    USAR_LISTA_DUPLA 0  - compilar com lista.c\n");
-    printf("    USAR_LISTA_DUPLA 1  - compilar com listadupla.c\n");
+    printf("    USAR_LISTA_DUPLA 0 - compilar com lista.c\n");
+    printf("    USAR_LISTA_DUPLA 1 - compilar com listadupla.c\n");
 
     printf("\n- Padrao da linguagem:\n");
     printf("  ANSI C89\n");
 
     printf("\n- Estrategia arquitetural:\n");
-    printf("  Desenvolvimento em camadas: repository, service,\n");
+    printf("  Desenvolvimento em camadas: lista, repository, service,\n");
     printf("  controller e aplicacao\n");
 
     printf("\n- Estrutura de dados:\n");
     printf("  Solucao com lista abstrata\n");
-    printf("  A estrutura concreta pode ser uma lista simplesmente\n");
-    printf("  encadeada ou uma lista duplamente encadeada\n");
+    printf("  A estrutura concreta pode ser uma lista simples encadeada\n");
+    printf("  ou uma lista duplamente encadeada\n");
+    printf("  A configuracao de entrega esta para lista simples\n");
+
+    appPausar();
+    appLimparTela();
 
     printf("\n- Abstracao da lista:\n");
     printf("  O sistema utiliza listaabstrata.h como ponto central\n");
@@ -150,41 +151,40 @@ void appExibirDealhes(void) {
     printf("  implementacao concreta pode ser trocada por define\n");
 
     printf("\n- Definicoes estruturais:\n");
-    printf("Organizado em bytes de maior pra menor size_t devido padding\n");
+    printf("  Organizado em bytes de maior pra menor size_t devido padding\n");
 
-    printf("  Lista simples:\n");
-    printf("    nodo_t  : struct { void *valor; struct nodo  *prox;\n");
-    printf("                       unsigned int  tamanho; char tipo; }\n");
+    printf("\n  Lista simples:\n");
+    printf("    nodo_t : struct { void *valor; struct nodo *prox;\n");
+    printf("               unsigned int tamanho; char tipo; }\n");
     printf("    lista_t : struct { nodo_t *inicio; nodo_t *fim; }\n");
-    printf("\n");
-    printf("  Lista dupla:\n");
-    printf("    nodoDupla_t  : struct { void *valor; struct nodo *prox;\n"); 
-    printf("                            struct nodoDupla  *anterior;\n");
-    printf("                            struct nodoDupla  *proximo;\n");
-    printf("                            unsigned int       tamanho;\n");
-    printf("                            char               tipo;\n");
-    printf("                            char tipo; unsigned int tamanho; }\n");
-    printf("\n");
+
+    printf("\n  Lista dupla:\n");
+    printf("    nodoDupla_t : struct { void *valor; struct nodo *prox;\n");
+    printf("                    struct nodoDupla *anterior;\n");
+    printf("                    struct nodoDupla *proximo;\n");
+    printf("                    unsigned int tamanho;\n");
+    printf("                    char tipo; }\n");
     printf("    listaDupla_t : struct { nodoDupla_t *inicio;\n");
-    printf("                    nodoDupla_t *fim; }\n");
-    
-    appPausar();
+    printf("                     nodoDupla_t *fim; }\n");
 
     printf("\n- Organizacao modular:\n");
     printf("  lista simples : lista.h / lista.c\n");
-    printf("  lista dupla   : listadupla.h / listadupla.c\n");
-    printf("  abstracao     : listaabstrata.h\n");
-    printf("  itens comuns  : comumlistas.h / comumlistas.c\n");
-    printf("  repository    : repository.h / repository.c\n");
-    printf("  service       : service.h / service.c\n");
-    printf("  controller    : controller.h / controller.c\n");
-    printf("  aplicacao     : app.h / app.c\n");
+    printf("  lista dupla : listadupla.h / listadupla.c\n");
+    printf("  abstracao : listaabstrata.h\n");
+    printf("  itens comuns : comumlistas.h / comumlistas.c\n");
+    printf("  repository : repository.h / repository.c\n");
+    printf("  service : service.h / service.c\n");
+    printf("  controller : controller.h / controller.c\n");
+    printf("  aplicacao : app.h / app.c\n");
+
+    appPausar();
+    appLimparTela();
 
     printf("\n- Fluxo de execucao:\n");
     printf("  O entrypoint (main) invoca um menu de opcoes, que aciona\n");
-    printf("  o controller. Este delega ao service, que coordena as\n");
-    printf("  operacoes sobre repository e lista, com apoio da camada\n");
-    printf("  de aplicacao\n");
+    printf("  o controller\n");
+    printf("  Este delega ao service, que coordena as operacoes sobre\n");
+    printf("  repository e lista, com apoio da camada de aplicacao\n");
     printf("  Opcoes extras de menu foram adicionadas para apoio mesmo\n");
     printf("  que nao pertencam diretamente a solicitacao principal\n");
 
@@ -199,14 +199,10 @@ void appExibirDealhes(void) {
     printf("  nos nodos da lista\n");
 
     printf("\n- Uso de macros e enumeracoes:\n");
-    printf("  Macros (#define) utilizadas para mascaras simbolicas,\n");
+    printf("  Macros (#define) utilizadas para mascaras simbolicas\n");
     printf("  inclusive na selecao da implementacao da lista abstrata\n");
     printf("  Uso adicional de enum no repository para controle do\n");
     printf("  fluxo de leitura do arquivo\n");
-    
-    
-    appLimparBuffer();
-    appPausar();
 
     printf("\n- Observacoes de codigo pertinentes:\n");
     printf("  .O ponteiro fim garante insercao O(1) ao final da lista\n");
@@ -222,29 +218,36 @@ void appExibirDealhes(void) {
     printf("   estrutura de lista dentro dele\n");
     printf("  .Foram feitos incrementos na solucao para melhor\n");
     printf("   organizacao, reaproveitamento e apresentacao\n");
-    
+
+    appPausar();
+    appLimparTela();
+
     printf("\n- Uso de agentes de IA:\n");
-    printf("  .IA foi utilizda como nesta função para harmonizar escrita\n");
-    printf("  .Utilizada para gerar codigo operacional que não depende de\n");
-    printf("   logica, ex: esqueletos de switch-case\n");
-    printf("  .Analise de solucao de codigo para certificacao de coerencia\n");
-    printf("   logica do que se propunha a funcao\n");
-    printf("  .Pesquisas diversas sobre caracteristicas de funcoes, sintaxe e\n");
-    printf("   requisitos do trabalho: padrao C ANSI, confronto de minha\n");
-    printf("   implementao pessoal de listas x apresentacao pelo material da\n");
-    printf("   disciplina, analise de alguma necessidade de refatoracao\n");
-    
-    
+    printf("  .IA foi utilizda para gerar codigo operacional que nao\n");
+    printf("   depende de logica\n");
+    printf("  .Como nesta funcao para harmonizar escrita e jogar pra\n");
+    printf("   printfs na app.c\n");
+    printf("  .Analise de solucao de codigo para certificacao de\n");
+    printf("   coerencia logica do que se propunha a funcao\n");
+    printf("  .Pesquisas diversas sobre caracteristicas de funcoes,\n");
+    printf("   sintaxe e requisitos do trabalho\n");
+    printf("  .Padrao C ANSI, confronto de minha implementacao pessoal\n");
+    printf("   de listas x apresentacao pelo material da disciplina,\n");
+    printf("   analise de alguma necessidade de refatoracao\n");
+
     printf("\n- Observacoes finais:\n");
     printf("  .Buscado evitar redundancia de codigo\n");
-    printf("  .Trazer responsabilidade dentro de um contexto unico aceitavel para a funcao\n");
-    printf("  .A construcao em camadas foi para explorar um estudo atual pessoal do aluno\n");
-    printf("  .A implementacao abstrata foi o mais perto de caso polimorfico de lista no paradigma\n");
-    printf("   buscou-se uma pre implementacao de listas para trabalho futuro\n");
-    printf("  .Tempo desempenhado: inicio sex20-03-2026(2h)+sab(7h)+dom(3h)+seg(2h)+ter(4h) = 18 .. 20 horas\n");
-    
+    printf("  .Trazer responsabilidade dentro de um contexto unico\n");
+    printf("   aceitavel para a funcao\n");
+    printf("  .A construcao em camadas foi para explorar um estudo\n");
+    printf("   atual pessoal do aluno\n");
+    printf("  .A implementacao abstrata foi o mais perto de caso\n");
+    printf("   polimorfico de lista no paradigma\n");
+    printf("  .Buscou-se uma pre implementacao de listas para trabalho\n");
+    printf("   futuro\n");
+    printf("  .Tempo desempenhado: inicio sex20-03-2026(2h)+sab(7h)+\n");
+    printf("   dom(3h)+seg(2h)+ter(4h)+qua(2) = 20.. horas\n");
 }
-
 
 int appLerOpcao(void) {
     int opcao;
