@@ -2,7 +2,7 @@
 #include "service.h"
 #include "app.h"
 #include <stdio.h>
-
+#include <ctype.h>
 
 void controllerExecutarOpcao(int opcao, lista_t *lista) {
     char tipo;
